@@ -1,0 +1,7 @@
+*   3c2c1f7 (HEAD -> main) merge: integrate tested parcel inbound and pickup prototype
+|\  
+| * 0814091 (feature/EPM-017-inbound) test(EPM-017): cover inbound races pickup checks rollback and retry semantics
+| * 8a15e81 feat(EPM-017): verify pickup recipient and persist outbound audit atomically
+| * d4eafb5 feat(EPM-017): atomically register waybills with payload-bound idempotency
+|/  
+* 27cd434 chore: establish parcel management service contracts

@@ -1,0 +1,33 @@
+# 社区快递驿站包裹管理系统核心原型
+
+教师给定题目。工作项EPM-017，2026年10月27日实际实现和验证。
+
+## 运行
+
+使用Python 3.10或更新版本，无第三方依赖。
+
+```bash
+cd parcel_project
+python3 -m unittest discover -s tests -v
+git log --all --graph --oneline --decorate
+```
+
+预期16项测试通过，测试自动创建并清理临时SQLite数据库。原始结果见`evidence/test_results.txt`。
+
+## 源码与规则
+
+- `src/contracts.py`：InboundRequest、Parcel、ParcelRepository抽象接口和ParcelService。
+- `src/sqlite_repository.py`：SQLite实现子类，事务内入库、幂等、核验出库和审计。
+- `tests/test_parcel.py`：16项测试，包括16线程重复运单提交和12线程同键重试。
+
+同一规范化运单只允许一条包裹记录。幂等范围是操作员与请求键；同键必须对应相同运单、收件人及货架。同一货架格可以存放不同包裹。
+
+取件时传入收件人身份必须匹配包裹记录；重复取件不重复写出库审计。出库后旧入库键返回已出库记录，新键也不能重复登记同一运单。更换承运商或重新寄件时，生产系统需要明确规范化标识规则。
+
+## 实现边界
+
+本原型仅实现服务层及SQLite持久化，没有完整HTTP登录、短信取件码、通知服务、异常件和多网点隔离。传入身份必须由可信上层认证；仅比较两个身份字符串不能代替真实身份核验。SQLite一致性测试不证明万用户性能。
+
+真实完成：创建分支、EPM-017三次提交、16项测试及本地非快进合并。
+
+待补：远端PR、他人审查、真实共享代码、PingCode关联及Project原生截图。请勿把PR模板当作已发生的审查记录。

@@ -1,0 +1,7 @@
+Independent CPM forward/backward pass: 51 workdays, slack agrees.
+40 work packages + 8 milestone entries per Project XML.
+No baseline primary-resource allocation exceeds 100%.
+Labor: 148000; total authorization: 167410.
+Snapshot: 19 complete, 1 at 35%, 20 not started.
+PV=83350 EV=80950 AC=87263.
+Project XML parsed and identifiers/links checked; not opened in native Microsoft Project.

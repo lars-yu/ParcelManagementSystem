@@ -1,0 +1,2 @@
+Dashboard JavaScript syntax and DOM logic: initial 40 rows; completed filter 19 rows; task search; empty state; reset passed.
+Native browser rendering not tested because a browser executable is unavailable.
