@@ -74,4 +74,13 @@ class SQLiteParcelRepository(ParcelRepository):
             return self.record(db, parcel_id)
 
     def pickup(self, parcel_id: int, recipient: str) -> Parcel:
-        raise NotImplementedError
+        with self.transaction() as db:
+            parcel = self.record(db, parcel_id)
+            if parcel.recipient != recipient:
+                raise Forbidden('recipient identity does not match this parcel')
+            if parcel.status == 'picked_up':
+                return parcel
+            db.execute("UPDATE parcel SET status='picked_up' WHERE id=?", (parcel_id,))
+            db.execute("INSERT INTO audit(parcel_id,action,actor) VALUES(?,'pickup',?)",
+                       (parcel_id, recipient))
+            return self.record(db, parcel_id)
