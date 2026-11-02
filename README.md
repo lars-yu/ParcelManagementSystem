@@ -12,7 +12,7 @@ python3 -m unittest discover -s tests -v
 git log --all --graph --oneline --decorate
 ```
 
-预期16项测试通过，测试自动创建并清理临时SQLite数据库。原始结果见`evidence/test_results.txt`。
+预期20项测试通过（原核心业务16项，加共享模块4项），测试自动创建并清理临时SQLite数据库。原始结果见`evidence/test_results.txt`。
 
 ## 源码与规则
 
@@ -30,4 +30,4 @@ git log --all --graph --oneline --decorate
 
 真实完成：创建分支、EPM-017三次提交、16项测试及本地非快进合并。
 
-待补：远端PR、他人审查、真实共享代码、PingCode关联及Project原生截图。请勿把PR模板当作已发生的审查记录。
+已增加：单人扮演BE、FE、QA的共享模块演练，见`虚拟角色共享说明.md`。待补：远端PR、平台上的角色审查演练、PingCode关联及Project原生截图。请勿把PR模板当作已发生的审查记录。

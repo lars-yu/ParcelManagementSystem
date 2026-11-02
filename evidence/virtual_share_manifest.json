@@ -1,0 +1,8 @@
+{
+  "source_commit": "7e83f6d4c3d375a1188cbc32a8fb46e0e76fb36f",
+  "consumer_commit": "253f45bf930d1d6e4d5bec0359a5140b4b23e9df",
+  "test_commit": "17235951fffa1b29cf11ec3fe8ea451b7da48ff3",
+  "merge_commit": "28c575365735814c819aa7d61c8858d79f077b67",
+  "roles_are_virtual": true,
+  "tests_total": 20
+}

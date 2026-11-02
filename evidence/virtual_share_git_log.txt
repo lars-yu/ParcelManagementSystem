@@ -1,0 +1,14 @@
+*   28c5753 (HEAD -> main) merge: complete single-person virtual-role sharing exercise
+|\  
+| * 1723595 (feature/EPM-020-shared-export) test(EPM-020): virtual QA verifies CSV handoff and core integration
+| * 253f45b feat(EPM-020): virtual FE integrates shared export with core service
+| * 7e83f6d feat(EPM-020): virtual BE supplies reusable parcel CSV module
+|/  
+* adcfb0c docs: record parcel experiment evidence and pending external steps
+*   3c2c1f7 merge: integrate tested parcel inbound and pickup prototype
+|\  
+| * 0814091 (feature/EPM-017-inbound) test(EPM-017): cover inbound races pickup checks rollback and retry semantics
+| * 8a15e81 feat(EPM-017): verify pickup recipient and persist outbound audit atomically
+| * d4eafb5 feat(EPM-017): atomically register waybills with payload-bound idempotency
+|/  
+* 27cd434 chore: establish parcel management service contracts
