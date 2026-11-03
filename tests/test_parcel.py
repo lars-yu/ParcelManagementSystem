@@ -1,4 +1,5 @@
 import concurrent.futures
+from contextlib import closing
 import sqlite3
 import tempfile
 import threading
@@ -21,7 +22,7 @@ class ParcelTests(unittest.TestCase):
         return InboundRequest(operator, tracking_no, recipient, location, request_key)
 
     def count(self, table):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db:
             return db.execute('SELECT COUNT(*) FROM ' + table).fetchone()[0]
 
     def test_01_receive(self):

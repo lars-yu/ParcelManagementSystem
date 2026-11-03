@@ -3,37 +3,7 @@ test_02_duplicate_returns_same_id (test_parcel.ParcelTests.test_02_duplicate_ret
 test_03_key_payload_mismatch (test_parcel.ParcelTests.test_03_key_payload_mismatch) ... ok
 test_04_duplicate_waybill (test_parcel.ParcelTests.test_04_duplicate_waybill) ... ok
 test_05_multiple_parcels_same_shelf (test_parcel.ParcelTests.test_05_multiple_parcels_same_shelf) ... ok
-test_06_concurrent_single_waybill (test_parcel.ParcelTests.test_06_concurrent_single_waybill) ... /media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b49a0>
-  def update_wrapper(wrapper,
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b48b0>
-  def update_wrapper(wrapper,
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4a90>
-  def update_wrapper(wrapper,
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4b80>
-  def update_wrapper(wrapper,
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4c70>
-  def update_wrapper(wrapper,
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4e50>
-  def update_wrapper(wrapper,
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4d60>
-  def update_wrapper(wrapper,
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4f40>
-  def update_wrapper(wrapper,
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b5030>
-  def update_wrapper(wrapper,
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b5120>
-  def update_wrapper(wrapper,
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-ok
+test_06_concurrent_single_waybill (test_parcel.ParcelTests.test_06_concurrent_single_waybill) ... ok
 test_07_receive_rollback (test_parcel.ParcelTests.test_07_receive_rollback) ... ok
 test_08_pickup (test_parcel.ParcelTests.test_08_pickup) ... ok
 test_09_wrong_recipient (test_parcel.ParcelTests.test_09_wrong_recipient) ... ok
@@ -51,6 +21,6 @@ test_generator_input_and_count (test_shared_export.SharedExportTests.test_genera
 test_roundtrip_chinese_quotes_commas_and_newlines (test_shared_export.SharedExportTests.test_roundtrip_chinese_quotes_commas_and_newlines) ... ok
 
 ----------------------------------------------------------------------
-Ran 21 tests in 0.387s
+Ran 21 tests in 0.647s
 
 OK

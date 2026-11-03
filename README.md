@@ -44,7 +44,7 @@ git log --all --graph --oneline --decorate
 
 真实完成：创建分支、EPM-017三次提交、16项测试及本地非快进合并。
 
-已增加：单人扮演BE、FE、QA的共享模块演练，见`共享模块交接说明.md`。待补：远端PR、平台上的角色审查演练、PingCode关联及Project原生截图。请勿把PR模板当作已发生的审查记录。
+已增加：单人扮演BE、FE、QA的共享模块演练，见`共享模块交接说明.md`。远端PR与单人职责自查见[PR #1](https://github.com/lars-yu/ParcelManagementSystem/pull/1)，包含审查意见及处理记录。待补：PingCode关联及Project原生截图。请勿把PR模板当作已发生的审查记录。
 
 ## 取件编号校验改进
 
