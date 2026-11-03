@@ -1,4 +1,4 @@
-"""Virtual FE consumes the shared module and the existing core service."""
+"""Shared CSV integration maintained by 前端开发工程师 许佳宁."""
 from dataclasses import asdict
 from io import StringIO
 from pathlib import Path

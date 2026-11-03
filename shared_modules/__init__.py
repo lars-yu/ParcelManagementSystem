@@ -1,1 +1,1 @@
-"""Modules exchanged between virtual roles in a single-person exercise."""
+"""Reusable modules exchanged by backend, frontend, and test engineers."""

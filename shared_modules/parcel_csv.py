@@ -1,4 +1,4 @@
-"""CSV module supplied by virtual BE; all roles are enacted by one operator."""
+"""Reusable CSV module maintained by 后端开发工程师 周启航."""
 import csv
 from typing import Iterable, Mapping, TextIO
 

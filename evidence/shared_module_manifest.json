@@ -1,0 +1,41 @@
+{
+  "source_commit": "7e83f6d4c3d375a1188cbc32a8fb46e0e76fb36f",
+  "consumer_commit": "253f45bf930d1d6e4d5bec0359a5140b4b23e9df",
+  "test_commit": "17235951fffa1b29cf11ec3fe8ea451b7da48ff3",
+  "merge_commit": "28c575365735814c819aa7d61c8858d79f077b67",
+  "tests_total": 20,
+  "collaboration_mode": "single_operator_role_exercise",
+  "team": {
+    "PM": {
+      "name": "焦裕斐",
+      "position": "项目经理"
+    },
+    "BA": {
+      "name": "陈思远",
+      "position": "需求分析师"
+    },
+    "TL": {
+      "name": "林子衡",
+      "position": "架构负责人"
+    },
+    "BE": {
+      "name": "周启航",
+      "position": "后端开发工程师"
+    },
+    "FE": {
+      "name": "许佳宁",
+      "position": "前端开发工程师"
+    },
+    "QA": {
+      "name": "赵雨桐",
+      "position": "测试工程师"
+    },
+    "DO": {
+      "name": "孙嘉诚",
+      "position": "运维工程师"
+    }
+  },
+  "provider_role": "BE",
+  "consumer_role": "FE",
+  "verification_role": "QA"
+}
