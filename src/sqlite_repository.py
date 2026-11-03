@@ -1,6 +1,6 @@
 """SQLite teaching prototype; no HTTP identity verification or SMS gateway."""
 import sqlite3
-from contextlib import contextmanager
+from contextlib import contextmanager, closing
 from .contracts import ParcelRepository, InboundRequest, Parcel, Conflict, Forbidden
 
 
@@ -8,7 +8,7 @@ class SQLiteParcelRepository(ParcelRepository):
     def __init__(self, path, before_commit=None):
         self.path = str(path)
         self.before_commit = before_commit
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db:
             db.executescript('''
                 PRAGMA journal_mode=WAL;
                 CREATE TABLE IF NOT EXISTS parcel (

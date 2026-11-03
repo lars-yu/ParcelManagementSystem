@@ -60,6 +60,8 @@ class ParcelService:
         return self.repository.receive(request)
 
     def pickup(self, parcel_id: int, recipient: str) -> Parcel:
+        if type(parcel_id) is not int or parcel_id <= 0:
+            raise ValueError('parcel_id must be a positive integer')
         if not isinstance(recipient, str) or not recipient.strip():
             raise ValueError('recipient identity is required')
         return self.repository.pickup(parcel_id, recipient)

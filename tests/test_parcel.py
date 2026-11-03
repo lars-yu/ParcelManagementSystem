@@ -1,4 +1,5 @@
 import concurrent.futures
+from contextlib import closing
 import sqlite3
 import tempfile
 import threading
@@ -21,7 +22,7 @@ class ParcelTests(unittest.TestCase):
         return InboundRequest(operator, tracking_no, recipient, location, request_key)
 
     def count(self, table):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db:
             return db.execute('SELECT COUNT(*) FROM ' + table).fetchone()[0]
 
     def test_01_receive(self):
@@ -129,6 +130,18 @@ class ParcelTests(unittest.TestCase):
     def test_16_parameterized_sql(self):
         self.service.receive(self.request(tracking_no="x'); DROP TABLE parcel;--"))
         self.assertEqual(self.count('parcel'), 1)
+
+
+    def test_17_invalid_pickup_id_preserves_parcel_and_audit(self):
+        parcel = self.service.receive(self.request())
+        for invalid_id in (True, False, 1.0, '1', None, 0, -1):
+            with self.subTest(parcel_id=invalid_id):
+                with self.assertRaises(ValueError):
+                    self.service.pickup(invalid_id, 'r1')
+                self.assertEqual(self.service.receive(self.request()).status, 'stored')
+                self.assertEqual((self.count('parcel'), self.count('audit')), (1, 1))
+        self.assertEqual(self.service.pickup(parcel.id, 'r1').status, 'picked_up')
+        self.assertEqual(self.count('audit'), 2)
 
 
 if __name__ == '__main__':
