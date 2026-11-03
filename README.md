@@ -16,12 +16,39 @@
 
 教师给定题目。工作项EPM-017，2026年10月27日实际实现和验证。
 
+## 仓库结构
+
+```text
+ParcelManagementSystem/
+├── README.md                 # 项目说明与运行入口
+├── demo_shared_code.py       # CSV共享模块集成演示
+├── src/                      # 数据模型、业务服务与SQLite仓储
+├── shared_modules/           # 独立的CSV导出模块
+├── tests/                    # 业务与共享模块自动化测试
+├── docs/                     # 协作说明及PR模板
+│   ├── 共享模块交接说明.md
+│   └── PR说明模板.md
+└── evidence/                 # 测试、演示与历史验证记录
+    └── README.md             # 证据索引与历史口径说明
+```
+
+- [共享模块交接说明](docs/共享模块交接说明.md)：接口、角色职责和复现命令。
+- [PR说明模板](docs/PR说明模板.md)：后续PR的填写参考。
+- [验证记录索引](evidence/README.md)：区分历史测试记录与当前验证结果。
+
+演示入口和测试命令保持不变：
+
+```bash
+python3 demo_shared_code.py
+python3 -m unittest discover -s tests -v
+```
+
 ## 运行
 
 使用Python 3.10或更新版本，无第三方依赖。
 
 ```bash
-cd parcel_project
+# 在仓库根目录执行；从实验材料目录进入时先 cd parcel_project
 python3 -m unittest discover -s tests -v
 git log --all --graph --oneline --decorate
 ```
@@ -32,7 +59,7 @@ git log --all --graph --oneline --decorate
 
 - `src/contracts.py`：InboundRequest、Parcel、ParcelRepository抽象接口和ParcelService。
 - `src/sqlite_repository.py`：SQLite实现子类，事务内入库、幂等、核验出库和审计。
-- `tests/test_parcel.py`：16项测试，包括16线程重复运单提交和12线程同键重试。
+- `tests/test_parcel.py`：17项测试，包括16线程重复运单提交和12线程同键重试。
 
 同一规范化运单只允许一条包裹记录。幂等范围是操作员与请求键；同键必须对应相同运单、收件人及货架。同一货架格可以存放不同包裹。
 
@@ -44,7 +71,7 @@ git log --all --graph --oneline --decorate
 
 真实完成：创建分支、EPM-017三次提交、16项测试及本地非快进合并。
 
-已增加：单人扮演BE、FE、QA的共享模块演练，见`共享模块交接说明.md`。远端PR与单人职责自查见[PR #1](https://github.com/lars-yu/ParcelManagementSystem/pull/1)，包含审查意见及处理记录。待补：PingCode关联及Project原生截图。请勿把PR模板当作已发生的审查记录。
+已增加：单人扮演BE、FE、QA的共享模块演练，见[共享模块交接说明](docs/共享模块交接说明.md)。远端PR与单人职责自查见[PR #1](https://github.com/lars-yu/ParcelManagementSystem/pull/1)，包含审查意见及处理记录。待补：PingCode关联及Project原生截图。请勿把PR模板当作已发生的审查记录。
 
 ## 取件编号校验改进
 
