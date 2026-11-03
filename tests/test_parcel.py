@@ -131,5 +131,17 @@ class ParcelTests(unittest.TestCase):
         self.assertEqual(self.count('parcel'), 1)
 
 
+    def test_17_invalid_pickup_id_preserves_parcel_and_audit(self):
+        parcel = self.service.receive(self.request())
+        for invalid_id in (True, False, 1.0, '1', None, 0, -1):
+            with self.subTest(parcel_id=invalid_id):
+                with self.assertRaises(ValueError):
+                    self.service.pickup(invalid_id, 'r1')
+                self.assertEqual(self.service.receive(self.request()).status, 'stored')
+                self.assertEqual((self.count('parcel'), self.count('audit')), (1, 1))
+        self.assertEqual(self.service.pickup(parcel.id, 'r1').status, 'picked_up')
+        self.assertEqual(self.count('audit'), 2)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -26,7 +26,7 @@ python3 -m unittest discover -s tests -v
 git log --all --graph --oneline --decorate
 ```
 
-预期20项测试通过（原核心业务16项，加共享模块4项），测试自动创建并清理临时SQLite数据库。原始结果见`evidence/test_results.txt`。
+预期21项测试通过（原核心业务16项、取件编号校验1项，加共享模块4项），测试自动创建并清理临时SQLite数据库。原始结果见`evidence/test_results.txt`；本次取件编号校验回归结果见`evidence/pr_pickup_id_tests.txt`。
 
 ## 源码与规则
 
@@ -45,3 +45,7 @@ git log --all --graph --oneline --decorate
 真实完成：创建分支、EPM-017三次提交、16项测试及本地非快进合并。
 
 已增加：单人扮演BE、FE、QA的共享模块演练，见`共享模块交接说明.md`。待补：远端PR、平台上的角色审查演练、PingCode关联及Project原生截图。请勿把PR模板当作已发生的审查记录。
+
+## 取件编号校验改进
+
+服务层要求包裹编号为正整数；布尔值、浮点数、字符串、空值及非正整数均抛出ValueError，避免SQLite将True、1.0或字符串“1”匹配到编号1。非法请求不改变包裹状态，也不增加出库审计。合法但不存在的编号仍抛出KeyError。

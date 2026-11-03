@@ -1,0 +1,56 @@
+test_01_receive (test_parcel.ParcelTests.test_01_receive) ... ok
+test_02_duplicate_returns_same_id (test_parcel.ParcelTests.test_02_duplicate_returns_same_id) ... ok
+test_03_key_payload_mismatch (test_parcel.ParcelTests.test_03_key_payload_mismatch) ... ok
+test_04_duplicate_waybill (test_parcel.ParcelTests.test_04_duplicate_waybill) ... ok
+test_05_multiple_parcels_same_shelf (test_parcel.ParcelTests.test_05_multiple_parcels_same_shelf) ... ok
+test_06_concurrent_single_waybill (test_parcel.ParcelTests.test_06_concurrent_single_waybill) ... /media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b49a0>
+  def update_wrapper(wrapper,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b48b0>
+  def update_wrapper(wrapper,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4a90>
+  def update_wrapper(wrapper,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4b80>
+  def update_wrapper(wrapper,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4c70>
+  def update_wrapper(wrapper,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4e50>
+  def update_wrapper(wrapper,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4d60>
+  def update_wrapper(wrapper,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b4f40>
+  def update_wrapper(wrapper,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b5030>
+  def update_wrapper(wrapper,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/media/insta360/72F0EF1CF0EEE577/lars/miniconda/lib/python3.13/functools.py:36: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7e74e13b5120>
+  def update_wrapper(wrapper,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_07_receive_rollback (test_parcel.ParcelTests.test_07_receive_rollback) ... ok
+test_08_pickup (test_parcel.ParcelTests.test_08_pickup) ... ok
+test_09_wrong_recipient (test_parcel.ParcelTests.test_09_wrong_recipient) ... ok
+test_10_repeat_pickup (test_parcel.ParcelTests.test_10_repeat_pickup) ... ok
+test_11_empty_fields (test_parcel.ParcelTests.test_11_empty_fields) ... ok
+test_12_pickup_rollback (test_parcel.ParcelTests.test_12_pickup_rollback) ... ok
+test_13_no_reinbound_after_pickup (test_parcel.ParcelTests.test_13_no_reinbound_after_pickup) ... ok
+test_14_concurrent_same_key (test_parcel.ParcelTests.test_14_concurrent_same_key) ... ok
+test_15_unknown_parcel (test_parcel.ParcelTests.test_15_unknown_parcel) ... ok
+test_16_parameterized_sql (test_parcel.ParcelTests.test_16_parameterized_sql) ... ok
+test_17_invalid_pickup_id_preserves_parcel_and_audit (test_parcel.ParcelTests.test_17_invalid_pickup_id_preserves_parcel_and_audit) ... ok
+test_core_receive_pickup_and_shared_export_integration (test_shared_export.SharedExportTests.test_core_receive_pickup_and_shared_export_integration) ... ok
+test_empty_input_still_has_header (test_shared_export.SharedExportTests.test_empty_input_still_has_header) ... ok
+test_generator_input_and_count (test_shared_export.SharedExportTests.test_generator_input_and_count) ... ok
+test_roundtrip_chinese_quotes_commas_and_newlines (test_shared_export.SharedExportTests.test_roundtrip_chinese_quotes_commas_and_newlines) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.387s
+
+OK
