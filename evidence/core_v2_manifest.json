@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "implementation_date": "2026-11-03",
+  "http_operations": 17,
+  "database_tables": 6,
+  "tests": 56,
+  "original_tests_preserved": 20,
+  "new_tests": 36,
+  "implemented": [
+    "login_and_roles",
+    "inbound_idempotency",
+    "pickup_identity_and_code",
+    "parcel_search_and_location",
+    "exception_restore_or_return",
+    "overdue_statistics",
+    "transactional_outbox_retry",
+    "audit_csv_export",
+    "sqlite_online_backup"
+  ],
+  "external_adapters": {
+    "notification": "local_file_mailbox"
+  },
+  "limitations": [
+    "no_complete_business_ui",
+    "no_real_sms",
+    "no_10000_user_load_test",
+    "no_automatic_legacy_database_migration"
+  ],
+  "evidence": [
+    "evidence/test_results_core_v2.txt",
+    "evidence/demo_workflow_core_v2.txt"
+  ]
+}
