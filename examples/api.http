@@ -1,0 +1,99 @@
+# 可在VS Code REST Client等工具中逐条执行。先按README初始化管理员。
+@base = http://127.0.0.1:8000
+@token = 在这里粘贴登录得到的access_token
+@parcelId = 1
+@exceptionId = 1
+@pickupCode = 在这里填写本地信箱中的六位码
+
+### 健康检查
+GET {{base}}/api/health
+
+### 登录（改成init时设置的密码）
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{"username":"admin","password":"请改成你设置的管理员密码"}
+
+### 入库（重试保持request_key和全部参数相同）
+POST {{base}}/api/parcels
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"tracking_no":"SF-DEMO-001","recipient":"resident-001","phone":"13800000000","carrier":"测试快递","location":"A-01","request_key":"inbound-001"}
+
+### 分页查询
+GET {{base}}/api/parcels?status=stored&page=1&page_size=20
+Authorization: Bearer {{token}}
+
+### 查看详情
+GET {{base}}/api/parcels/{{parcelId}}
+Authorization: Bearer {{token}}
+
+### 发送本地通知，再从data/mailbox.jsonl读取取件码
+POST {{base}}/api/notifications/dispatch
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"limit":20}
+
+### 核验取件
+POST {{base}}/api/parcels/{{parcelId}}/pickup
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"recipient":"resident-001","pickup_code":"{{pickupCode}}"}
+
+### 异常登记：应使用另一件仍在库的包裹
+POST {{base}}/api/parcels/{{parcelId}}/exceptions
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"kind":"damaged","note":"包装破损，待核实"}
+
+### 异常恢复（或将resolution改为return退回）
+POST {{base}}/api/exceptions/{{exceptionId}}/resolve
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"resolution":"restore","note":"核实后恢复在库"}
+
+### 货架调整：仅在库或异常状态可调整
+PATCH {{base}}/api/parcels/{{parcelId}}/location
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"location":"B-02"}
+
+### 业务统计
+GET {{base}}/api/statistics
+Authorization: Bearer {{token}}
+
+### 滞留包裹
+GET {{base}}/api/parcels/overdue?days=3
+Authorization: Bearer {{token}}
+
+### 审计
+GET {{base}}/api/audits?parcel_id={{parcelId}}
+Authorization: Bearer {{token}}
+
+### CSV导出
+GET {{base}}/api/parcels/export.csv
+Authorization: Bearer {{token}}
+
+### 通知状态
+GET {{base}}/api/notifications
+Authorization: Bearer {{token}}
+
+### 新建工作人员
+POST {{base}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"username":"clerk1","password":"DemoClerk123!","role":"clerk"}
+
+### 站长或管理员解除取件码锁定
+POST {{base}}/api/parcels/{{parcelId}}/reset-pickup
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{}
