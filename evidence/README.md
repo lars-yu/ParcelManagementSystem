@@ -18,3 +18,8 @@
 提交说明改为中文后提交号发生变化，当前来源以[共享模块交接说明](../docs/共享模块交接说明.md)及Git历史为准。历史日志与清单保留供追溯，不代表当前分支状态。
 
 PR创建、自查、意见处理与合并记录见[PR #1](https://github.com/lars-yu/ParcelManagementSystem/pull/1)。该流程为本人按项目职责进行的单人角色演练，PingCode关联仍待实际执行。
+
+
+## 核心原型 v2
+
+原历史记录继续保留。上传包中的 `test_results_core_v2.txt` 是 56 项测试的历史输出；集成 PR #1 的编号校验后，当前完整回归为 57 项，见 `github_core_v2_tests.txt`。本次真实 HTTP 全流程演示见 `github_core_v2_demo.txt`。`demo_workflow_core_v2.txt` 和 `core_v2_manifest.json` 保留上传包原始版本，不能代替本次验证结果。
